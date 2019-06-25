@@ -1,0 +1,72 @@
+﻿
+
+<div class="wrapper position white shadow cf">
+    <div class="container">
+        <h1>
+            OMDb SEARCH
+        </h1>
+
+    </div>
+
+
+    <div class="form-wrapper cf">
+        <input type="text" placeholder="Movie Title" ng-model="searchtitle">
+        <input type="text" placeholder="Year" ng-model="searchyear">
+        <select ng-init="searchplot" ng-model="searchplot">
+            <option value="short">--Plot--</option>
+            <option value="short">Short</option>
+            <option value="full">Full</option>
+        </select>
+        <button ng-click="searchMovie()">Search</button>
+    </div>
+
+    <div class="error" ng-show="isNotSucess">
+        {{moviedetails.Error}}. Please be more specific.
+        </div>
+
+        <!-- Header Start -->
+        <div class="row" ng-show="isSucess">
+
+            <!-- Thumbnail Start -->
+            <div class="col-3 tablet-col-persist shadow2">
+                <img class="thumbnail" src="{{moviedetails.Poster}}" />
+            </div>
+            <!-- Thumbnail End -->
+            <!-- About Start  -->
+            <div class="col-9 tablet-col-persist padding-20 lh">
+
+                <!-- Title Start -->
+                <h4>{{moviedetails.Title}}<span class="label orange-red border"> ({{moviedetails.Year}})</span></h4>
+                <!-- Title End -->
+                <!-- Rating Start -->
+                <div class="text-strong">
+                    <span>{{moviedetails.Rated}}</span> |<span>{{moviedetails.imdbRating}}</span> |<span>{{moviedetails.imdbVotes}}</span>
+                </div>
+                <!-- Rating End -->
+                <!-- Info Start -->
+                <p><span class="text-strong"></span>{{moviedetails.Plot}}</p>
+                <p><span class="text-strong">Duration:</span>{{moviedetails.Runtime}}</p>
+                <p><span class="text-strong">Release Date:</span>{{moviedetails.Released}}</p>
+                <p><span class="text-strong">Director:</span> {{moviedetails.Director}}</p>
+                <p><span class="text-strong">Writers:</span> {{moviedetails.Writer}}</p>
+                <p><span class="text-strong">Actors:</span> {{moviedetails.Actors}}</p>
+                <!-- Info End -->
+                <!-- Genre Start -->
+                <div class="pull-left width-100 margin-top">
+                    <a href="#" class="label orange-red hover-tooltip">
+                        <span class="tooltip top text-capitalize">
+                            {{moviedetails.Genre}}
+                        </span>
+                        Action
+                    </a>
+
+                </div>
+                <!-- Genre End -->
+            </div>
+            <!-- About End -->
+        </div>
+        <!-- Header End -->
+
+
+
+    </div>

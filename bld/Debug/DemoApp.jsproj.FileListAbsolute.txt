@@ -1,0 +1,17 @@
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bin\Debug\ReverseMap\resources.pri
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bin\Debug\AppxManifest.xml
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bin\Debug\DemoApp.build.appxrecipe
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\DemoApp.jsproj.CoreCompileInputs.cache
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\ResourceHandlingTask.state
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\priconfig.xml
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\priconfig.xml.intermediate
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\layout.resfiles
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\layout.resfiles.intermediate
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\resources.resfiles
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\resources.resfiles.intermediate
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\pri.resfiles
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\pri.resfiles.intermediate
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\qualifiers.txt
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\qualifiers.txt.intermediate
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\sruth\source\repos\DemoApp\DemoApp\bld\Debug\ProjectArchitectures.txt

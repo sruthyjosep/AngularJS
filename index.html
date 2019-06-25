@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+    <title>Search Films from IMDB</title>
+    <link rel="stylesheet" type="text/css" href="css/layout.css"></head>
+<body>
+    <div>
+
+        <div ng-view=""></div>
+
+
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+
+    <script>
+
+        var demoApp = angular.module("demoApp", ['ngRoute']);  //define a module, with no dependencies with other modules
+        demoApp.config(function ($routeProvider) {
+            $routeProvider
+                .when('/view1',
+                    {
+                        controller: 'FetchDetails',
+                        templateUrl: './partials/view1.html'
+                    })
+                .otherwise({ redirectTo: '/view1' });
+
+        });
+        //with demoApp it is possible to have multiple controllers
+        demoApp.controller('FetchDetails', function ($scope, $http) {
+
+            $scope.isSucess = false;
+            $scope.isNotSucess = false;
+            $scope.searchMovie = function () {
+
+                var url = 'http://www.omdbapi.com/?apikey=ff880cfd';
+                
+                if (angular.isDefined($scope.searchtitle))
+                    url = url + '&t=' + $scope.searchtitle;
+                if (angular.isDefined($scope.searchyear))
+                    url = url + '&y=' + $scope.searchyear;
+                if (angular.isDefined($scope.searchplot))
+                    url = url + '&plot=' + $scope.searchplot;
+                console.log(url);
+                $http.get(url).success(function (data) {
+                    $scope.moviedetails = data;
+                    if ($scope.moviedetails.Response == "True") {
+                        $scope.isSucess = true;
+                        $scope.isNotSucess = false;
+                    }
+                    else {
+                    $scope.isSucess = false;
+                        $scope.isNotSucess = true;
+                    }
+                })
+                    .error(function (data) {
+                        return data;
+                        console.log("Failed to get data")
+                    });
+
+
+
+            };
+
+
+        });
+
+
+        demoApp.run(function ($rootScope) {
+            $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+                $dialogs.error("Something went wrong!", error);
+                console.error("$stateChangeError: ", toState, error);
+            });
+        });
+
+    </script>
+</body>
+</html>
